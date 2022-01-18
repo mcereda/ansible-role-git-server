@@ -1,0 +1,28 @@
+---
+- name: Install Git
+  become: true
+  package:
+    name: "{{ packages_by_pkg_mgr[ansible_pkg_mgr|lower] }}"
+    state: present
+
+- name: Create the user account
+  become: true
+  user:
+    name: "{{ user_id }}"
+    home: "{{ user_dir | default(omit) }}"
+    shell: "{{ user_shell | default(omit) }}"
+    uid: "{{ user_uid | default(omit) }}"
+    gid: "{{ user_gid | default(omit) }}"
+    group: "{{ user_group | default(omit) }}"
+    groups: "{{ user_groups | default(omit) }}"
+    comment: "{{ user_gecos | default(omit) }}"
+    state: present
+
+- name: Enable the given authorized keys
+  become: true
+  authorized_key:
+    user: "{{ user_id }}"
+    state: present
+    key: "{{ item }}"
+  with_items:
+    - "{{ authorized_keys }}"

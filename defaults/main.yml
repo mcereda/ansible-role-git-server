@@ -1,0 +1,8 @@
+---
+user_dir: "/srv/{{ user_id }}"
+user_id: git
+user_shell: /usr/bin/git-shell
+
+authorized_keys: []
+
+lfs: true

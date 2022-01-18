@@ -1,0 +1,11 @@
+---
+packages_by_pkg_mgr:
+  apt:
+    - git
+    - "{{ 'git-lfs' if lfs else '' }}"
+  pacman:
+    - git
+    - "{{ 'git-lfs' if lfs else '' }}"
+  zypper:
+    - git
+    - "{{ 'git-lfs' if lfs else '' }}"

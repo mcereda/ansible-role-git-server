@@ -1,0 +1,15 @@
+galaxy_info:
+  role_name: git_server
+  author: mcereda
+  description: Install git and set the host to act as a git server
+  license: MIT
+  min_ansible_version: 2.9
+  platforms:
+    - name: opensuse
+      versions: 42.3
+
+  galaxy_tags:
+    - git
+    - server
+
+dependencies: []
