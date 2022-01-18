@@ -1,6 +1,6 @@
 # Git server
 
-Install git and set the host to act as a git server.
+Make a host a Git server.
 
 ## Requirements
 
@@ -10,7 +10,7 @@ None.
 
 Variable        | Type    | Default value        | Description
 ----------------|---------|----------------------|------------
-authorized_keys | list    | []                   | List of SSH keys authorized for connection
+authorized_keys | list    | `[]`                 | List of SSH keys authorized for connection
 lfs             | boolean | `true`               | Enable LFS support
 packages_apt    | list    | `["git", "git-lfs"]` | Packages to install using the APT package manager
 packages_pacman | list    | `["git", "git-lfs"]` | Packages to install using the pacman package manager
@@ -28,7 +28,7 @@ None.
 - hosts: servers
   roles:
     - role: mcereda.git_server
-      lfs: no
+      lfs: false
 ```
 
 ## License
